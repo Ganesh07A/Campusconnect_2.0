@@ -1,0 +1,81 @@
+.register-bg {
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.card {
+  backdrop-filter: blur(20px);
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  transition: transform 0.3s ease;
+  padding: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px #00000040;
+}
+
+.form-label {
+  color: #0066cc;
+  font-weight: 500;
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-radius: 10px;
+  color: #333;
+  height: 38px;
+  padding-left: 12px;
+  transition: 0.3s;
+}
+
+.form-control::placeholder {
+  color: #7290ad;
+  letter-spacing: 1px;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.form-text {
+  color: #577ca1;
+  font-size: 0.85rem;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  min-height: 45px;
+  font-size: 1rem;
+  background-color: #0066cc;
+  border: none;
+  border-radius: 10px;
+  color: whitesmoke;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #004d99;
+}
+
+#formFeedback {
+  color: #ffc107;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 10px;
+}

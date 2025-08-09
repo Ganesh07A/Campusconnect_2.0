@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Student Council</h2>
+
+  <!-- 🔍 Search Bar -->
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <input type="text" id="searchInput" class="form-control" placeholder=" 🔍 Search by name...">
+    </div>
+  </div>
+
+  <!-- 👤 Member Cards -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" id="councilCards">
+    {% for member in members %}
+    <div class="col council-member">
+      <div class="card h-100 text-center shadow council-card">
+        {% if member.photo %}
+        <img src="{{ member.photo.url }}" class="card-img-top rounded-circle mx-auto mt-3"
+          style="width: 120px; height: 120px; object-fit: cover;" alt="{{ member.member_name }}">
+        {% else %}
+        <img src="{% static 'assets/img/60111.jpg' %}" class="card-img-top rounded-circle mx-auto mt-3"
+          style="width: 120px; height: 120px; object-fit: cover;" alt="No Photo">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title member-name">{{ member.member_name }}</h5>
+          <p class="text-muted">{{ member.member_post }}</p>
+          <p><i class="fas fa-phone-alt"></i> {{ member.contact }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- 🔍 JavaScript Search Filter -->
+<script>
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("keyup", function () {
+    const filter = this.value.toLowerCase();
+    const members = document.querySelectorAll(".council-member");
+
+    members.forEach(function (member) {
+      const name = member.querySelector(".member-name").textContent.toLowerCase();
+      if (name.includes(filter)) {
+        member.style.display = "block";
+      } else {
+        member.style.display = "none";
+      }
+    });
+  });
+</script>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Home -
+CampusConnect{% endblock %} {% block content %}
+
+<!-- Hero Section -->
+<div
+  id="hero"
+  class="hero-section text-white d-flex align-items-center justify-content-center text-center"
+>
+  <div class="container">
+    <h1 class="display-4 fw-bold text-shadow">Welcome To CampusConnect</h1>
+    <p class="lead">Your College Hub</p>
+    <a class="btn btn-warning btn-lg mt-4 shadow" href="#services"
+      >Get Started</a
+    >
+  </div>
+</div>
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show position-fixed top-0 end-0 m-4 shadow z-3" role="alert" style="min-width: 250px;">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+<!-- Services Section -->
+<section id="services" class="py-5 bg-light border-top border-bottom">
+  <div class="container text-center">
+    <h2 class="text-uppercase fw-bold mb-3">Services</h2>
+    <p class="text-muted">Explore what we offer</p>
+    <div class="row mt-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <a href="/academic/pyqs"
+          ><i class="fas fa-book fa-3x mb-3 text-primary"></i
+        ></a>
+        <h4>Academics</h4>
+        <p class="text-muted">Mid-sems, CTs, PYQs, and more.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <a href="/events/upcomingevents"
+          ><i class="fas fa-bullhorn fa-3x mb-3 text-primary"></i
+        ></a>
+        <h4>Events</h4>
+        <p class="text-muted">Stay updated with the latest activities.</p>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <a href="/council/list"
+          ><i class="fas fa-users fa-3x mb-3 text-primary"></i
+        ></a>
+        <h4>Community</h4>
+        <p class="text-muted">Meet your fellow students.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4 text-primary">About CampusConnect</h2>
+    <p class="lead text-muted text-center mb-5">
+      Your go-to digital companion for everything happening on campus.
+    </p>
+
+    <div class="row text-center mb-5">
+      <div class="col-md-6 mb-4" data-aos="fade-right">
+        <div class="info-box p-4 h-100 shadow-sm rounded bg-light">
+          <h4 class="text-secondary fw-semibold mb-3">🎯 Our Mission</h4>
+          <p class="text-muted">
+            To bridge the communication gap between students, faculty, and admin
+            through a single, accessible platform.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4" data-aos="fade-left">
+        <div class="info-box p-4 h-100 shadow-sm rounded bg-light">
+          <h4 class="text-secondary fw-semibold mb-3">👁️ Our Vision</h4>
+          <p class="text-muted">
+            To simplify student life by organizing all important academic,
+            social, and administrative content in one place.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="features-box bg-white rounded shadow-sm p-4 mb-5"
+      data-aos="fade-up"
+    >
+      <h4 class="text-center text-success mb-3">🌟 Key Features</h4>
+      <ul class="list-unstyled fs-5 text-muted">
+        <li class="mb-2">
+          📚 Access to Previous Year Questions, Mid-Sem Papers, and CTs
+        </li>
+        <li class="mb-2">
+          📣 Real-time Events and Announcements by Student Council
+        </li>
+        <li class="mb-2">🧑‍🤝‍🧑 Student Council Info and Contact</li>
+        <li class="mb-2">🗓️ Upcoming college activities and schedules</li>
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- Optional Footer Credit -->
+<!-- <footer class="text-center text-muted small pb-4">
+  Developed by <strong>Ganesh Suvarnakar</strong> | Shreeyash College of Engineering & Technology
+</footer> -->
+
+<!-- Scroll to Top Button -->
+<a
+  href="#"
+  class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle shadow"
+  style="z-index: 999"
+>
+  <i class="fas fa-arrow-up"></i>
+</a>
+<script>
+  setTimeout(function () {
+    const alerts = document.querySelectorAll(".alert");
+    alerts.forEach((alert) => {
+      alert.classList.remove("show");
+      alert.classList.add("fade");
+    });
+  }, 3000); // 3 seconds
+</script>
+{% endblock %}
